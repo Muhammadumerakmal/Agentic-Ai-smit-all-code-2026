@@ -1,6 +1,5 @@
-print("hello mami ")
+from requests import get as get_request 
 
-def ali(a:int)->int:
-    return a+1
+response = get_request("https://jsonplaceholder.typicode.com/todos")
 
-print(ali(5))
+print(response.json())
