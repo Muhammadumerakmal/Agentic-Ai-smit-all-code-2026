@@ -39,12 +39,78 @@
 
 # Task 5 (Lesson 06–07): Apni favourite 5 tech skills ki list banao. Phir ek dict banao jisme skill name key ho aur experience (years) value ho.
 
-tech_list = ["js","py","ts","css","html"]
+# tech_list = ["js","py","ts","css","html"]
 
-tech_dict = {
-    "skill":"full stack dev",
-    "exp":3
-}
+# tech_dict = {
+#     "skill":"full stack dev",
+#     "exp":3
+# }
 
-print(tech_list)
-print(tech_dict)
+# print(tech_list)
+# print(tech_dict)
+
+
+
+# tech_dict = {
+#     "JavaScript": 3,
+#     "Python": 2,
+#     "TypeScript": 1,
+#     "CSS": 3,
+#     "HTML": 4
+# }
+
+# Yahan loop chalao aur print karo:
+# "JavaScript → 3 years experience"
+# "Python → 2 years experience"
+# ... aur baaki sab
+
+
+
+# tech_dict = {
+#    "JavaScript": 3,
+#     "Python": 2,
+#    "TypeScript": 1,
+#    "CSS": 3,
+#    "HTML": 4
+# }
+
+
+# for i in tech_dict:
+#     print(f"{i} → {tech_dict[i]} years experience")
+
+
+
+# # Ek function banao: get_expert_skills(skills: dict) -> list
+# Jo sirf woh skills return kare jisme experience 2 se zyada ho
+# Example output: ["JavaScript", "CSS", "HTML"]
+
+# def get_expert_skills(skills:dict)->list:
+#     expert_skills = []
+#     for i in skills:
+#         if skills[i] >= 2:
+#             expert_skills.append(i)
+#     return expert_skills
+
+
+
+# print(get_expert_skills({
+#     "JavaScript": 3,
+#     "Python": 2,
+#     "TypeScript": 1,
+#     "CSS": 3,
+#     "HTML": 4}))
+
+
+# # Ek function banao: divide(a: int, b: int) -> float
+# Agar b = 0 ho toh crash mat karo
+# Gracefully handle karo aur message print karo:
+# "Error: 0 se divide nahi kar sakte!"
+
+
+def divide(a:int,b:int)->float:
+    try:
+        return a/b
+    except ZeroDivisionError as e:
+        print("cant divide by zero")
+
+divide(5,0)        
