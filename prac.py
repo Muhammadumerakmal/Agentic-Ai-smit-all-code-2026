@@ -51,66 +51,71 @@
 
 
 
-# tech_dict = {
-#     "JavaScript": 3,
-#     "Python": 2,
-#     "TypeScript": 1,
-#     "CSS": 3,
-#     "HTML": 4
-# }
+# # tech_dict = {
+# #     "JavaScript": 3,
+# #     "Python": 2,
+# #     "TypeScript": 1,
+# #     "CSS": 3,
+# #     "HTML": 4
+# # }
 
-# Yahan loop chalao aur print karo:
-# "JavaScript → 3 years experience"
-# "Python → 2 years experience"
-# ... aur baaki sab
-
-
-
-# tech_dict = {
-#    "JavaScript": 3,
-#     "Python": 2,
-#    "TypeScript": 1,
-#    "CSS": 3,
-#    "HTML": 4
-# }
-
-
-# for i in tech_dict:
-#     print(f"{i} → {tech_dict[i]} years experience")
+# # Yahan loop chalao aur print karo:
+# # "JavaScript → 3 years experience"
+# # "Python → 2 years experience"
+# # ... aur baaki sab
 
 
 
-# # Ek function banao: get_expert_skills(skills: dict) -> list
-# Jo sirf woh skills return kare jisme experience 2 se zyada ho
-# Example output: ["JavaScript", "CSS", "HTML"]
-
-# def get_expert_skills(skills:dict)->list:
-#     expert_skills = []
-#     for i in skills:
-#         if skills[i] >= 2:
-#             expert_skills.append(i)
-#     return expert_skills
+# # tech_dict = {
+# #    "JavaScript": 3,
+# #     "Python": 2,
+# #    "TypeScript": 1,
+# #    "CSS": 3,
+# #    "HTML": 4
+# # }
 
 
-
-# print(get_expert_skills({
-#     "JavaScript": 3,
-#     "Python": 2,
-#     "TypeScript": 1,
-#     "CSS": 3,
-#     "HTML": 4}))
+# # for i in tech_dict:
+# #     print(f"{i} → {tech_dict[i]} years experience")
 
 
-# # Ek function banao: divide(a: int, b: int) -> float
-# Agar b = 0 ho toh crash mat karo
-# Gracefully handle karo aur message print karo:
-# "Error: 0 se divide nahi kar sakte!"
+
+# # # Ek function banao: get_expert_skills(skills: dict) -> list
+# # Jo sirf woh skills return kare jisme experience 2 se zyada ho
+# # Example output: ["JavaScript", "CSS", "HTML"]
+
+# # def get_expert_skills(skills:dict)->list:
+# #     expert_skills = []
+# #     for i in skills:
+# #         if skills[i] >= 2:
+# #             expert_skills.append(i)
+# #     return expert_skills
 
 
-def divide(a:int,b:int)->float:
-    try:
-        return a/b
-    except ZeroDivisionError as e:
-        print("cant divide by zero")
 
-divide(5,0)        
+# # print(get_expert_skills({
+# #     "JavaScript": 3,
+# #     "Python": 2,
+# #     "TypeScript": 1,
+# #     "CSS": 3,
+# #     "HTML": 4}))
+
+
+# # # Ek function banao: divide(a: int, b: int) -> float
+# # Agar b = 0 ho toh crash mat karo
+# # Gracefully handle karo aur message print karo:
+# # "Error: 0 se divide nahi kar sakte!"
+
+
+# def divide(a:int,b:int)->float:
+#     try:
+#         return a/b
+#     except ZeroDivisionError as e:
+#         print("cant divide by zero")
+
+# divide(5,0)        
+
+
+def eat(noodles:int)->int:
+   return noodles * 2
+
