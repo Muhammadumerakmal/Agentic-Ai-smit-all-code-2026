@@ -116,6 +116,23 @@
 # divide(5,0)        
 
 
-def eat(noodles:int)->int:
-   return noodles * 2
+# def eat(noodles:int)->int:
+#    return noodles * 2
+
+
+
+
+
+
+
+
+# 
+
+
+
+
+
+
+
+
 
