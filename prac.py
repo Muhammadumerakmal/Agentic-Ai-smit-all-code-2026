@@ -298,3 +298,25 @@ class Dog(Animal):
 d1 = Dog("shephars",4,"mix","red")
 d1.info()        
         
+
+from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+    @abstractmethod
+    def start(self):
+        pass
+
+    @abstractmethod
+    def stop(self):
+        pass
+
+class Car(Vehicle):
+    def start(self):
+        print("Car started")
+
+    def stop(self):
+       print("Car stopped")
+
+c1 = Car()
+c1.start()     
+c1.stop()
