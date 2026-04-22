@@ -237,3 +237,42 @@
 # print(p1.__dict__)
 
 
+
+
+
+
+
+
+
+
+
+
+class Bank:
+    def __init__(self,account_number,balance):
+        self.account_number = account_number
+        self.__balance = balance
+
+    def deposit(self,amount):
+        self.__balance += amount
+        return self.__balance
+
+
+    def withdraw(self,amount):
+        if self.__balance >= amount:
+            self.__balance -= amount
+            return self.__balance
+
+        else:
+            print("insufficient funds")    
+
+            
+    def get_balance(self):
+        return self.__balance
+
+   
+ali = Bank(8452895724895,10)   
+print(ali.deposit(55))
+print(ali.withdraw(60))
+print(ali.get_balance())
+
+    
