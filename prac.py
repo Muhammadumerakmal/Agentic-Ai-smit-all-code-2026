@@ -355,3 +355,54 @@
 # For SmartThermostat, the status() method should return the current temperature setting.
 
 # Logic: Ensure that turn_on() changes the __is_on state to True.
+
+
+from abc import ABC, abstractmethod
+
+# 1. Added (ABC) so the abstract rules actually apply
+class DeviceTemplate(ABC):
+    @abstractmethod
+    def turn_on(self):
+        pass
+
+    @abstractmethod
+    def status(self):
+        pass
+
+class SmartDevice(DeviceTemplate):
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+        # 2. Changed to single underscore (_) so child classes can access it
+        self._is_on = False 
+        self._energy_usage = 0
+    
+    def turn_on(self):
+        self._is_on = True
+
+class SmartLight(SmartDevice):
+    def __init__(self, brand, model, brightness):
+        super().__init__(brand, model)
+        self.brightness = brightness
+
+    # 3. Must implement status() to satisfy the template
+    def status(self):
+        state = "ON" if self._is_on else "OFF"
+        return f"{self.brand} Light is {state} at {self.brightness}% brightness."
+
+class SmartThermostat(SmartDevice):
+    def __init__(self, brand, model, temperature):
+        super().__init__(brand, model)
+        self.temperature = temperature
+
+    def status(self):
+        state = "ON" if self._is_on else "OFF"
+        return f"{self.brand} Thermostat is {state}, set to {self.temperature}°C."
+
+# --- Testing the System ---
+light = SmartLight("Philips", "Hue", 99)
+nest = SmartThermostat("Google", "Nest", 22)
+
+print(light.status()) # Check initial status
+light.turn_on()       # Change state
+print(light.status()) # Check updated status
