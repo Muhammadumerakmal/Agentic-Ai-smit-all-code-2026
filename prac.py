@@ -359,7 +359,7 @@
 
 from abc import ABC, abstractmethod
 
-# 1. Added (ABC) so the abstract rules actually apply
+
 class DeviceTemplate(ABC):
     @abstractmethod
     def turn_on(self):
@@ -373,7 +373,6 @@ class SmartDevice(DeviceTemplate):
     def __init__(self, brand, model):
         self.brand = brand
         self.model = model
-        # 2. Changed to single underscore (_) so child classes can access it
         self._is_on = False 
         self._energy_usage = 0
     
@@ -385,7 +384,7 @@ class SmartLight(SmartDevice):
         super().__init__(brand, model)
         self.brightness = brightness
 
-    # 3. Must implement status() to satisfy the template
+    
     def status(self):
         state = "ON" if self._is_on else "OFF"
         return f"{self.brand} Light is {state} at {self.brightness}% brightness."
@@ -399,14 +398,15 @@ class SmartThermostat(SmartDevice):
         state = "ON" if self._is_on else "OFF"
         return f"{self.brand} Thermostat is {state}, set to {self.temperature}°C."
 
-# --- Testing the System ---
 light = SmartLight("Philips", "Hue", 99)
 nest = SmartThermostat("Google", "Nest", 22)
 
-print(light.status()) # Check initial status
-light.turn_on()       # Change state
-print(light.status()) # Check updated status
+print(light.status())
+light.turn_on()       
+print(light.status()) 
 
-nest.status()
-nest.turn_on()
-nest.status()
+print("\n")
+
+print(nest.status())
+print(nest.turn_on())
+print(nest.status())
