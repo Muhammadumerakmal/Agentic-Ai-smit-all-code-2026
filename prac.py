@@ -406,3 +406,7 @@ nest = SmartThermostat("Google", "Nest", 22)
 print(light.status()) # Check initial status
 light.turn_on()       # Change state
 print(light.status()) # Check updated status
+
+nest.status()
+nest.turn_on()
+nest.status()
